@@ -1,21 +1,18 @@
 import java.util.Scanner;
 void main() {
     Scanner in = new Scanner(System.in);
-    double itemPrice = 0;
-    String Trash = "";
-    double totalCost = 0;
-    System.out.print("Enter your item price: ");
-    if (in.hasNextDouble()) {
-        itemPrice = in.nextDouble();
+    int birthMonth;
+    String trash = "";
+    System.out.print("Enter your birth month: ");
+    if (in.hasNextInt()) {
+        birthMonth = in.nextInt();
         in.nextLine(); // Remember to clear the buffer here
-        if (itemPrice>=100) {
-            System.out.print("Your shipping is free and your total cost is " + itemPrice);
-        } else if (itemPrice<100) {
-            totalCost = (itemPrice * 0.02) + itemPrice;
-            System.out.print("Your total cost with shipping is " + totalCost);
+        if (birthMonth >= 1 && birthMonth  <= 12) {
+            System.out.print("Your birth month is: " + birthMonth);
+        } else {
+            System.out.print("Enter a valid birth month 1-12. You entered: " + birthMonth);
         }
-    } else {
-        Trash = in.nextLine();
-        System.out.print("Enter a valid item price. You entered: " + Trash);
+    } else {   trash = in.nextLine();
+        System.out.print("Enter a valid birth month. You entered: " + trash);
     }
 }
