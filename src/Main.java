@@ -1,20 +1,12 @@
 import java.util.Scanner;
 void main() {
-    Scanner in = new Scanner(System.in);
-    int birthMonth;
-    String trash = "";
-    System.out.print("Enter your birth month: ");
-    if (in.hasNextInt()) {
-        birthMonth = in.nextInt();
-        in.nextLine(); // Remember to clear the buffer here
-        if (birthMonth >= 1 && birthMonth  <= 12) {
-            System.out.print("Your birth month is: " + birthMonth);
-        } else {
-            System.out.print("Enter a valid birth month 1-12. You entered: " + birthMonth);
-        }
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Enter your age in years: ");
+    int age = scanner.nextInt();
+    if (age >= 21) {
+        System.out.print("You are 21 or older. You get a wristband.");
     } else {
-        trash = in.nextLine();
-        System.out.print("Enter a valid birth month. You entered: " + trash);
+         System.exit(0);
     }
 }
 
